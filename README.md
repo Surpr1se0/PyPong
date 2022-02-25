@@ -1,5 +1,5 @@
 # PyPong
-## A simple Pong in Python
+## A simple Pong in Python using the Turtle Package
 I started this project to learn a little bit more about python. The game is long before finished, and i would love that you could contribute to this project in order to help me. 
 Please, if you want to, fork this repo, and create a pull request. You can also simply open an issue with the tag "enhancement", or anything that suits you:
 
