@@ -9,87 +9,54 @@ window.tracer(0)  # stop the window updating
 
 # Menu
 
-menu = turtle.Turtle()
-menu.speed(0)
-menu.color("white")
+text1 = turtle.Turtle()
+text1.speed(0)
+text1.pensize(2)
+text1.goto(0, 40)
+text1.color("white")
+text1.write("START", align="center", font=("Courier", 24, "normal"))
+text1.penup()
 
-# Creating Menu option buttons
-def button(length):
-    for i in range(4):
-        menu.forward(length)
-        menu.left(90)
+text2 = turtle.Turtle()
+text2.speed(0)
+text2.pensize(2)
+text2.goto(0, -20)
+text2.color("white")
+text2.write("FAQ", align="center", font=("Courier", 24, "normal"))
+text2.penup()
 
 
-def column(n, length):
-    menu.left(270)
-    for i in range(n):
-        button(length)
-        menu.forward(length)
-    menu.penup()
-    menu.left(90)
-    menu.forward(n * length)
-    menu.left(180)
-    menu.pendown()
+text3 = turtle.Turtle()
+text3.speed(0)
+text3.pensize(2)
+text3.goto(0, -80)
+text3.color("white")
+text3.write("EXIT", align="center", font=("Courier", 24, "normal"))
+text3.penup()
 
-column(5, 100)
-
+#Making options clickable
 def btnclick(x,y):
-    if 0 < x < 101 and 0 > y > -101:
-        print("Start Game")
+    if -50 < x < 50 and 80 > y > -0:
+        print("START")
         print(x, y)
         turtle.clearscreen()
-    elif 0 < x < 101 and -101 > y > -201:
-        print("Rules")
+    elif -50 < x < 50 and -0 > y > -50:
+        print("FAQ")
         print(x, y)
         turtle.clearscreen()
-    elif 0 < x < 101 and -201 > y > -301:
-        print("Highscore")
-        print(x, y)
-        turtle.clearscreen()
-    elif 0 < x < 101 and -301 > y > -401:
-        print("Hi")
-        print(x, y)
-        turtle.clearscreen()
-    elif 0 < x < 101 and -401 > y > -501:
-        print("Hi")
-        print(x, y)
-        turtle.clearscreen()
-    elif 0 < x < 101 and -501 > y > -601:
-        print("Hi")
+    elif -50 < x < 50 and -50 > y > -100:
+        print("EXIT")
         print(x, y)
         turtle.clearscreen()
     else:
         print("Click One Of The Options!")
         print(x, y)
         btnclick(x, y)
+
 turtle.onscreenclick(btnclick, 1)
 turtle.listen()
-
 turtle.done()
 
-
-# Menu Options
-menu.penup()
-menu.goto(8, -46)
-menu.write("START GAME!", font=("Arial", 12, "normal"))
-
-menu.penup()
-menu.goto(6, -145)
-menu.write("RULES", font=("Arial", 12, "normal"))
-
-menu.penup()
-menu.goto(3, -248)
-menu.write("HIGH SCORE", font=("Arial", 12, "normal"))
-
-menu.penup()
-menu.goto(4, -343)
-menu.write("FAQ", font=("Arial", 12, "normal"))
-
-menu.penup()
-menu.goto(3, -450)
-menu.write("QUIT GAME", font=("Arial", 12, "normal"))
-
-turtle.done()
 
 # Score
 score_a = 0
